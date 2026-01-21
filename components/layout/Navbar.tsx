@@ -86,7 +86,17 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/" className="relative group block">
+              <Link 
+                href="/" 
+                className="relative group block"
+                onClick={(e) => {
+                  // Si on est déjà sur la page d'accueil, scroll vers le haut
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
+              >
                 <span className="text-2xl font-bold gradient-text font-display">MSN</span>
                 <motion.span
                   className="absolute -right-2 -top-1"
