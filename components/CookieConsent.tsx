@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cookie, X } from "lucide-react";
 import Link from "next/link";
@@ -17,7 +17,6 @@ declare global {
 }
 
 const CookieConsent = () => {
-  const [showBanner, setShowBanner] = useState(false);
   const { language } = useLanguage();
 
   const content = {
@@ -41,18 +40,6 @@ const CookieConsent = () => {
 
   const t = content[language];
 
-  useEffect(() => {
-    const consent = localStorage.getItem(CONSENT_KEY);
-    if (consent === null) {
-      // No consent decision yet, show banner
-      setShowBanner(true);
-    } else if (consent === "accepted") {
-      // User accepted, enable GA
-      enableGA();
-    }
-    // If declined, GA stays disabled
-  }, []);
-
   const enableGA = () => {
     if (typeof window.gtag === "function") {
       window.gtag("consent", "update", {
@@ -68,6 +55,20 @@ const CookieConsent = () => {
       });
     }
   };
+
+  // Initialize state based on localStorage
+  const [showBanner, setShowBanner] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const consent = localStorage.getItem(CONSENT_KEY);
+    if (consent === null) {
+      return true; // Show banner if no consent decision
+    }
+    if (consent === "accepted") {
+      // User accepted, enable GA
+      enableGA();
+    }
+    return false; // Don't show banner if consent was given
+  });
 
   const handleAccept = () => {
     localStorage.setItem(CONSENT_KEY, "accepted");

@@ -47,9 +47,9 @@ type ContactFormData = z.infer<ReturnType<typeof createContactSchema>>;
 
 const Contact = () => {
   const { toast } = useToast();
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
-  const contactSchema = useMemo(() => createContactSchema(t), [language]);
+  const contactSchema = useMemo(() => createContactSchema(t), [t]);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -91,7 +91,7 @@ const Contact = () => {
       setTimeout(() => {
         form.reset();
       }, 3000);
-    } catch (error) {
+    } catch {
       toast({
         title: t("contact.error"),
         description: t("contact.errorDesc"),

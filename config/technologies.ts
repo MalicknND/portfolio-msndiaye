@@ -4,7 +4,6 @@ import {
   Database,
   Server,
   Container,
-  GitBranch,
   Palette,
   Zap,
   Cloud,
