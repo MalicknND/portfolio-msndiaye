@@ -24,7 +24,7 @@ Portfolio professionnel moderne développé avec **Next.js 15**, **TypeScript**,
 ```bash
 # Cloner le repository
 git clone <repository-url>
-cd msndiaye-nextjs
+cd portfolio-msndiaye
 
 # Installer les dépendances
 npm install
