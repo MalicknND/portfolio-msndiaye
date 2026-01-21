@@ -10,6 +10,9 @@ import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 
 export default function HomePage() {
+
+  
+
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {

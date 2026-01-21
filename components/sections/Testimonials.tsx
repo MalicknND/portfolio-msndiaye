@@ -28,7 +28,7 @@ const TestimonialCard = memo(({ testimonial, index, t }: {
 
       {/* Quote text */}
       <blockquote className="text-muted-foreground flex-1 mb-6 italic">
-        "{t(testimonial.quoteKey)}"
+      &quot;{t(testimonial.quoteKey)}&quot;
       </blockquote>
 
       {/* Author */}

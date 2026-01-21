@@ -1,0 +1,20 @@
+{
+  "name": "Malick Ndiaye - Développeur Full Stack",
+  "short_name": "Malick Ndiaye",
+  "description": "Développeur Full Stack JavaScript passionné. Expertise en React, Next.js, TypeScript, Node.js.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "fr"
+}
