@@ -23,7 +23,7 @@ Portfolio professionnel moderne développé avec **Next.js 15**, **TypeScript**,
 
 ```bash
 # Cloner le repository
-git clone <repository-url>
+git clone https://github.com/MalicknND/portfolio-msndiaye.git
 cd portfolio-msndiaye
 
 # Installer les dépendances
